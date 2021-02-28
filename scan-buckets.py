@@ -132,7 +132,7 @@ def _search_content(url, content):
 
     matches = []
     for match in MATCHING_PATTERNS:
-        if match in result:
+        if match in result and 'example' NOT in url and 'test' NOT in url:
             print(url)
             _write_to_file(url)
             return
