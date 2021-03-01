@@ -19,7 +19,7 @@ MATCHING_PATTERNS = [
 
 GITHUB_SEARCH_API = 'https://api.github.com/search/code?q='
 START_PAGE_NUMBER = 1
-SEARCH_QUERY = 'user%3A{}+{}+NOT+test+NOT+example+NOT+sample+NOT+mock&type=Code&page='
+SEARCH_QUERY = 'user%3A{}+{}+NOT+test+NOT+example+NOT+sample+NOT+mock+NOT+extension%3Ac+NOT+extension%3Acpp+NOT+extension%3Ah+NOT+extension%3Acctype=Code&page='
 GH_RESULTS_PER_PAGE = 30
 GH_TOKEN = None
 DEBUG = False
@@ -132,7 +132,7 @@ def _search_content(url, content):
 
     matches = []
     for match in MATCHING_PATTERNS:
-        if match in result and 'example' not in url and 'test' not in url:
+        if match in result and 'example' not in url and 'test' not  in url:
             print(url)
             _write_to_file(url)
             return
